@@ -22,6 +22,7 @@ export TS_VERBOSE=1
 export TS_REFOUTDIR="./ref"
 export TS_NAMELISTDIR="."
 export TS_TOLERANCE="TOLERANCE_sp"
+export TS_TIMINGS="TIMINGS_sp"
 export TS_BASEDIR="."
 export TS_FORCEMATCH="TRUE"
 
