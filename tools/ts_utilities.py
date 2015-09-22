@@ -173,4 +173,3 @@ def read_environ():
             key = k.partition(prefix)[2]
             environ[key] = v
     return environ
-
