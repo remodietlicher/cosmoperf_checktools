@@ -171,6 +171,6 @@ def read_environ():
     for k, v in os.environ.iteritems():
         if k.startswith(prefix):
             key = k.partition(prefix)[2]
-        environ[key] = v
+            environ[key] = v
     return environ
 
