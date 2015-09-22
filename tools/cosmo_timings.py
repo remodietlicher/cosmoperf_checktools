@@ -27,7 +27,18 @@ class COSMO_Run:
             res += pad
             res += "{k}: {v}s".format(k=k, v=v)
         return res
-
+    def __getitem__(self, name):
+        items = [float(x[1]) for x in self.timings if name == x[0] ]
+        if len(items) is 0:
+            return None
+        if len(items) is 1:
+            return items[0]
+        return items
+    def items(self):
+        return [x[0] for x in self.timings]
+    def __contains__(self, name):
+        return name in self.items()
+    
     @staticmethod
     def find_cosmo_benchmark(file, start=" END OF TIME STEPPING"):
         import re
@@ -58,7 +69,7 @@ class COSMO_Run:
     @staticmethod
     def parse_time(file, time_string="Start"):
         import re
-        regex = re.compile(time_string+'\S*\s+(\d+)')
+        regex = re.compile(time_string+'[\S\s]+\s+(\d+)')
         for line in file:
             match = regex.search(line)
             if match:
