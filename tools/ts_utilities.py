@@ -166,16 +166,11 @@ def write_environ(test):
 
 def read_environ():
     """read environment variables and store into local map"""
-
+    prefix = "TS_"
     environ = {}
-    environ['BASEDIR'] = os.environ['TS_BASEDIR']
-    environ['REFOUTDIR'] = os.environ['TS_REFOUTDIR']
-    environ['VERBOSE'] = os.environ['TS_VERBOSE']
-    environ['RUNDIR'] = os.environ['TS_RUNDIR']
-    environ['LOGFILE'] = os.environ['TS_LOGFILE']
-    environ['NAMELISTDIR'] = os.environ['TS_NAMELISTDIR']
-    environ['TOLERANCE'] = os.environ['TS_TOLERANCE']
-    environ['FORCEMATCH'] = os.environ['TS_FORCEMATCH']
-
+    for k, v in os.environ.iteritems():
+        if k.startswith(prefix):
+            key = k.partition(prefix)[2]
+        environ[key] = v
     return environ
 
