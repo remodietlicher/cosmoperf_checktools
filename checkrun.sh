@@ -17,6 +17,7 @@ status=0
 # set environment variables for the checkers
 export TS_RUNDIR="."
 export TS_LOGFILE="lm_f90.out"
+export TS_LOGFILE_SLURM="run.out"
 export TS_VERBOSE=1
 export TS_REFOUTDIR="./ref"
 export TS_NAMELISTDIR="."
