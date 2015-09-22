@@ -36,6 +36,13 @@ if [ $? -gt 15 ]; then
     echo "output_tolerance_check : fail"
     status=1
 fi
+
+${checktool_dir}/checktimings.py
+if [ $? -gt 15 ]; then
+    echo "checktimings : fail"
+    status=1
+fi
+
 if [ ${status} == 0 ]; then
     echo TEST RESULT: OK
 else
