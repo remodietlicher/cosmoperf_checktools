@@ -17,12 +17,12 @@ status=0
 # set environment variables for the checkers
 export TS_RUNDIR="."
 export TS_LOGFILE="lm_f90.out"
-export TS_LOGFILE_SLURM="run.out"
+export TS_LOGFILE_SLURM="exe.log"
 export TS_VERBOSE=1
-export TS_REFOUTDIR="./ref"
+export TS_REFOUTDIR="./ref_${REAL_TYPE}"
 export TS_NAMELISTDIR="."
-export TS_TOLERANCE="TOLERANCE_sp"
-export TS_TIMINGS="TIMINGS_sp.cfg"
+export TS_TOLERANCE="TOLERANCE_${REAL_TYPE}"
+export TS_TIMINGS="TIMINGS_${REAL_TYPE}.cfg"
 export TS_BASEDIR="."
 export TS_FORCEMATCH="TRUE"
 
