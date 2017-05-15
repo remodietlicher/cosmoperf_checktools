@@ -50,6 +50,10 @@ else
     echo TEST RESULT: FAIL
 fi
 
+# Check if there are changes with respect to owm YUSPECIF
+# This will send a warning if not (but won't change the exit status)
+${checktool_dir}/yuspecif_owm_check.sh
+
 exit $status
 
 
