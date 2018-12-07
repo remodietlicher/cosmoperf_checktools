@@ -12,7 +12,7 @@ class COSMO_Run:
             self.timings.append(("total", float(COSMO_Run.get_slurm_timing(file))))
         if cosmolog:
             file = read_file(folder, cosmolog)
-            benchmark = COSMO_Run.find_cosmo_benchmark(file)
+            benchmark = COSMO_Run.find_cosmo_benchmark(file, start=None)
             self.benchmark_metadata = benchmark
             for result in benchmark:
                 tag = result["tag"]
